@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { StatusBar, View, Text } from 'react-native';
 import { AppLoading, Font } from 'expo';
-import { CountryListing } from './CountryListing';
+// import { CountryListing } from './CountryListing';
+import { CountryListing } from './CountryListing-testing';
+
 import { CalculatorModal } from './CalculatorModal';
 import Styles from './styles/Styles';
 

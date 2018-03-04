@@ -21,7 +21,6 @@ export class CountryListing extends Component {
   constructor(props) {
     super(props);
     this.loadCurrencyData = this.loadCurrencyData.bind(this);
-    // this.handleAppStateChange = this.handleAppStateChange.bind(this);
     this.onPressTipData = this.onPressTipData.bind(this);
     this.onPressList = this.onPressList.bind(this);
     this.state = {
@@ -34,25 +33,7 @@ export class CountryListing extends Component {
 
   componentDidMount() {
     this.loadCurrencyData();
-    // AppState.addEventListener('change', this.handleAppStateChange);
   }
-
-  /*
-  componentWillUnmount() {
-    AppState.removeEventListener('change', this.handleAppStateChange);
-  }
-
-  // CHECK APP STATE
-  handleAppStateChange = (nextAppState) => {
-    if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
-      // console.log('App has come to the foreground!')
-      this.loadCurrencyData();
-    }
-    this.setState({
-      appState: nextAppState
-    });
-  }
-  */
 
   // LOAD CURRENCY DATA BASED ON INTERNET CONNECTION STATUS
   loadCurrencyData = () => {
@@ -99,7 +80,6 @@ export class CountryListing extends Component {
 
   // DISPLAY COUNTRY DATA
   onPressTipData(country){
-    // this.props.navigation.navigate('Details');
     for ( var x = 0; x < countryTipData.length; x++) {
       if (country === countryTipData[x].country) {
         for ( var i = 0; i < this.state.currencyData.length; i++) {
