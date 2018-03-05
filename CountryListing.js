@@ -80,6 +80,7 @@ export class CountryListing extends Component {
 
   // DISPLAY COUNTRY DATA
   onPressTipData(country){
+    this.props.navigation.navigate('Details');
     for ( var x = 0; x < countryTipData.length; x++) {
       if (country === countryTipData[x].country) {
         for ( var i = 0; i < this.state.currencyData.length; i++) {

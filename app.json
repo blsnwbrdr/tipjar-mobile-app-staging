@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Tip Jar",
+    "name": "Tip Jar - Staging",
     "description": "A globetrotting guide to gratuity",
     "version": "1.2.0",
-    "slug": "tipjar-mobile",
+    "slug": "tipjar-mobile-staging",
     "privacy": "public",
     "sdkVersion": "23.0.0",
     "orientation": "portrait",
@@ -14,7 +14,7 @@
       "backgroundColor": "#3E2916"
     },
     "ios": {
-      "bundleIdentifier": "com.brandonscode.tipjar",
+      "bundleIdentifier": "com.brandonscode.tipjar-stagin",
       "buildNumber": "1.2.0",
       "splash": {
         "image": "./assets/tipjar-splash.png",

@@ -2,9 +2,19 @@ import { StyleSheet } from 'react-native';
 import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
 
 const Styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: colorLightGrey,
+  },
   container: {
     flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     backgroundColor: 'white',
+  },
+  navigationContainer: {
+    height: 40,
+    backgroundColor: colorLightGrey,
   },
   headerContainer: {
     alignItems: 'center',
