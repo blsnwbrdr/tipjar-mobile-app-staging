@@ -1,63 +1,40 @@
 import React, { Component } from 'react';
-import { SafeAreaView, StatusBar, View, Text } from 'react-native';
+import { NetInfo, AsyncStorage, View, Text } from 'react-native';
 import { AppLoading, Font } from 'expo';
-// import { CountryListing } from './CountryListing';
-// import { CountryListing } from './CountryListing-testing';
-
-// import { CalculatorModal } from './CalculatorModal';
-import Styles from './styles/Styles';
-
 import MainNavigation from './MainNavigation';
-// import { Navigation } from './Navigation';
-
+// import Styles from './styles/Styles';
 
 export default class App extends Component {
   state = {
     isLoadingComplete: false,
   };
 
-  // render() {
-  //   if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
-  //     return (
-  //       <AppLoading
-  //         startAsync={this._loadResourcesAsync}
-  //         onError={this._handleLoadingError}
-  //         onFinish={this._handleFinishLoading}
-  //       />
-  //     );
-  //   } else {
-  //     return (
-  //       <View style={Styles.container}>
-  //         <StatusBar barStyle="dark-content" />
-  //         <View style={Styles.headerContainer}>
-  //           <Text style={Styles.titleText}>TIP JAR</Text>
-  //           <Text style={Styles.subTitleText}>A globetrotting guide to gratuity</Text>
-  //         </View>
-  //         <CountryListing />
-  //         <CalculatorModal />
-  //       </View>
-  //     );
-  //   }
-  // }
+  componentDidMount() {
+    this.downloadCurrencyData();
+  }
 
-    // render() {
-    //   if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
-    //     return (
-    //       <AppLoading
-    //         startAsync={this._loadResourcesAsync}
-    //         onError={this._handleLoadingError}
-    //         onFinish={this._handleFinishLoading}
-    //       />
-    //     );
-    //   } else {
-    //     return (
-    //       <SafeAreaView style={Styles.safeArea}>
-    //         <StatusBar barStyle='dark-content' />
-    //         <Navigation />
-    //       </SafeAreaView>
-    //     )
-    //   }
-    // }
+  // DOWNLOAD CURRENCY DATA BASED ON INTERNET CONNECTION STATUS
+  downloadCurrencyData = () => {
+    NetInfo.isConnected.fetch().then(isConnected => {
+      console.log('Initial ' + (isConnected ? 'online' : 'offline'));
+    });
+    connectivityChange = (isConnected) => {
+      console.log('Now ' + (isConnected ? 'online' : 'offline'));
+      if (isConnected === true) {
+        fetch('https://brandonscode.herokuapp.com/currency-data')
+          .then(res => res.json())
+          .then(
+            (result) => {
+              AsyncStorage.setItem('currency-data', JSON.stringify(result), () => {
+                console.log('save new data');
+              });
+            }
+          )
+      }
+      NetInfo.isConnected.removeEventListener('connectionChange', connectivityChange);
+    }
+    NetInfo.isConnected.addEventListener('connectionChange', connectivityChange);
+  }
 
     render() {
       if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {

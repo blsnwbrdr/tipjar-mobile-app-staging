@@ -2,48 +2,31 @@ import React, { Component } from 'react';
 import { StatusBar, Text, View, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
-import { CountryListing } from './CountryListing';
-import Styles from './styles/Styles';
-import { colorOrange, colorDarkGrey } from './styles/Constants';
 
-class HomeScreen extends Component {
-  render() {
-    return (
-      <View style={Styles.container}>
-        <StatusBar barStyle="dark-content" />
-        <View style={Styles.headerContainer}>
-          <Text style={Styles.titleText}>TIP JAR</Text>
-          <Text style={Styles.subTitleText}>A globetrotting guide to gratuity</Text>
-        </View>
-        <CountryListing navigation={this.props.navigation} />
-      </View>
-    );
-  }
-}
+import ListScreen from './screens/ListScreen';
+import InfoScreen from './screens/InfoScreen';
+import CalculatorScreen from './screens/CalculatorScreen';
 
-class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Details!</Text>
-      </View>
-    );
-  }
-}
-
-class CalculatorScreen extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-      </View>
-    );
-  }
-}
+import { colorOrange, colorDarkGrey, colorLightGrey } from './styles/Constants';
 
 const HomeStack = StackNavigator({
-  Home: { screen: HomeScreen },
-  Details: { screen: DetailsScreen },
+  List: {
+    screen: ListScreen,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: colorLightGrey,
+      }
+    }
+   },
+  Info: {
+    screen: InfoScreen,
+    title: 'Country Information',
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: colorLightGrey,
+      }
+    }
+   },
 });
 
 export default TabNavigator(
@@ -75,6 +58,9 @@ export default TabNavigator(
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
     tabBarOptions: {
+      style: {
+        backgroundColor: colorLightGrey,
+      },
       activeTintColor: colorOrange,
       inactiveTintColor: colorDarkGrey,
     },

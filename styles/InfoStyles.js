@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
 
-const Styles = StyleSheet.create({
+const InfoStyles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -121,4 +121,4 @@ const Styles = StyleSheet.create({
   }
 });
 
-export default Styles;
+export default InfoStyles;
