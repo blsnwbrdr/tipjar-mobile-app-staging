@@ -5,6 +5,8 @@ import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 
 import ListScreen from './screens/ListScreen';
 import InfoScreen from './screens/InfoScreen';
+import SearchScreen from './screens/SearchScreen';
+import SearchInfoScreen from './screens/SearchInfoScreen';
 import CalculatorScreen from './screens/CalculatorScreen';
 
 import { colorOrange, colorDarkGrey, colorLightGrey } from './styles/Constants';
@@ -20,8 +22,28 @@ const HomeStack = StackNavigator({
    },
   Info: {
     screen: InfoScreen,
-    title: 'Country Information',
     navigationOptions: {
+      title: 'Info',
+      headerStyle: {
+        backgroundColor: colorLightGrey,
+      }
+    }
+   },
+});
+
+const SearchStack = StackNavigator({
+  Search: {
+    screen: SearchScreen,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: colorLightGrey,
+      }
+    }
+   },
+  SearchInfo: {
+    screen: SearchInfoScreen,
+    navigationOptions: {
+      title: 'Info',
       headerStyle: {
         backgroundColor: colorLightGrey,
       }
@@ -31,7 +53,8 @@ const HomeStack = StackNavigator({
 
 export default TabNavigator(
   {
-    Home: { screen: HomeStack },
+    List: { screen: HomeStack },
+    Search: { screen: SearchStack },
     Calculator: { screen: CalculatorScreen },
   },
   {
@@ -40,8 +63,11 @@ export default TabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         switch (routeName) {
-          case 'Home':
+          case 'List':
             iconName = 'ios-list';
+            break;
+          case 'Search':
+            iconName = 'ios-search';
             break;
           case 'Calculator':
             iconName = 'ios-calculator';

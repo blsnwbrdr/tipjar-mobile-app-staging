@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AsyncStorage, ScrollView, View, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
-import InfoStyles from './../styles/InfoStyles';
+import SearchInfoStyles from './../styles/SearchInfoStyles';
 
 // JSON DATA
 const countryTipData = require('./../data/countryTipData.json');
@@ -50,37 +50,37 @@ export default class InfoScreen extends React.Component {
   render() {
 
     return (
-      <ScrollView style={InfoStyles.scrollContainer}>
-        <View style={InfoStyles.countryContainer}>
-          <Text style={InfoStyles.countryHeader}>{this.state.countryTipData.country}</Text>
-          <Text style={InfoStyles.countryIcon}>
+      <ScrollView style={SearchInfoStyles.scrollContainer}>
+        <View style={SearchInfoStyles.countryContainer}>
+          <Text style={SearchInfoStyles.countryHeader}>{this.state.countryTipData.country}</Text>
+          <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name="cutlery" size={32} color="#494F56" />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Dining:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.dining}</Text>
-          <Text style={InfoStyles.countryIcon}>
+          <Text style={SearchInfoStyles.countryTitle}>Dining:</Text>
+          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.dining}</Text>
+          <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name="taxi" size={32} color="#494F56" />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Transportation:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.transportation}</Text>
-          <Text style={InfoStyles.countryIcon}>
+          <Text style={SearchInfoStyles.countryTitle}>Transportation:</Text>
+          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.transportation}</Text>
+          <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name="building" size={32} color="#494F56" />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Accomodation:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.accommodation}</Text>
-          <Text style={InfoStyles.countryIcon}>
+          <Text style={SearchInfoStyles.countryTitle}>Accomodation:</Text>
+          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.accommodation}</Text>
+          <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name="money" size={32} color="#494F56" />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Currency*:</Text>
-          <Text style={InfoStyles.countryText}>1 USD = {this.state.countryCurrencyData} {this.state.countryTipData.currency}</Text>
-          <Text style={InfoStyles.countryIcon}>
+          <Text style={SearchInfoStyles.countryTitle}>Currency*:</Text>
+          <Text style={SearchInfoStyles.countryText}>1 USD = {this.state.countryCurrencyData} {this.state.countryTipData.currency}</Text>
+          <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name="language" size={32} color="#494F56" />
           </Text>
-          <Text style={InfoStyles.countryTitle}>Thank you:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.thankyou}</Text>
-          <Text style={InfoStyles.countryTitle}>Goodbye:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.goodbye}</Text>
-          <Text style={InfoStyles.disclaimerText}>*Currency data is not live. Exchange rates are updated daily.</Text>
+          <Text style={SearchInfoStyles.countryTitle}>Thank you:</Text>
+          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.thankyou}</Text>
+          <Text style={SearchInfoStyles.countryTitle}>Goodbye:</Text>
+          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.goodbye}</Text>
+          <Text style={SearchInfoStyles.disclaimerText}>*Currency data is not live. Exchange rates are updated daily.</Text>
         </View>
       </ScrollView>
     );

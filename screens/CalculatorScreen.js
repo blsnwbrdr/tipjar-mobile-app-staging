@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, SafeAreaView, StyleSheet, Text, View, TouchableOpacity, TouchableHighlight } from 'react-native';
-// import Modal from 'react-native-modal';
+import { StatusBar, SafeAreaView, Text, View, TouchableHighlight } from 'react-native';
 import CalculatorStyles from './../styles/CalculatorStyles';
 
 export default class CalculatorScreen extends Component {
@@ -16,7 +15,7 @@ export default class CalculatorScreen extends Component {
 
   // CLOSE CALCULATOR
   onPressCloseCalculator() {
-    this.props.navigation.navigate('Home');
+    this.props.navigation.navigate('List');
   }
 
   // NUMBER BUTTON PRESS
