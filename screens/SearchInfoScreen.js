@@ -17,6 +17,14 @@ export default class InfoScreen extends React.Component {
     }
   }
 
+  static navigationOptions = ({ navigation }) => {
+    const { params } = navigation.state;
+    const country = params;
+      return {
+        title: country,
+      }
+  };
+
   componentDidMount = async () => {
     let response = await AsyncStorage.getItem('currency-data');
     response = JSON.parse(response);
@@ -52,7 +60,6 @@ export default class InfoScreen extends React.Component {
     return (
       <ScrollView style={SearchInfoStyles.scrollContainer}>
         <View style={SearchInfoStyles.countryContainer}>
-          <Text style={SearchInfoStyles.countryHeader}>{this.state.countryTipData.country}</Text>
           <Text style={SearchInfoStyles.countryIcon}>
             <FontAwesome name="cutlery" size={32} color="#494F56" />
           </Text>

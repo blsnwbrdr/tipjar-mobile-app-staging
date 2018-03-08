@@ -11,51 +11,69 @@ import CalculatorScreen from './screens/CalculatorScreen';
 
 import { colorOrange, colorDarkGrey, colorLightGrey } from './styles/Constants';
 
-const HomeStack = StackNavigator({
-  List: {
-    screen: ListScreen,
+const HomeStack = StackNavigator(
+  {
+    List: {
+      screen: ListScreen,
+    },
+    Info: {
+      screen: InfoScreen,
+    },
+  },
+  {
     navigationOptions: {
       headerStyle: {
         backgroundColor: colorLightGrey,
-      }
-    }
-   },
-  Info: {
-    screen: InfoScreen,
-    navigationOptions: {
-      title: 'Info',
-      headerStyle: {
-        backgroundColor: colorLightGrey,
-      }
-    }
-   },
-});
+      },
+      headerTintColor: colorOrange,
+      headerTitleStyle: {
+        fontFamily: 'patrick-hand',
+        fontSize: 24,
+      },
+    },
+  },
+);
 
-const SearchStack = StackNavigator({
-  Search: {
-    screen: SearchScreen,
+const SearchStack = StackNavigator(
+  {
+    Search: {
+      screen: SearchScreen,
+    },
+    SearchInfo: {
+      screen: SearchInfoScreen,
+    },
+  },
+  {
     navigationOptions: {
       headerStyle: {
         backgroundColor: colorLightGrey,
-      }
-    }
-   },
-  SearchInfo: {
-    screen: SearchInfoScreen,
-    navigationOptions: {
-      title: 'Info',
-      headerStyle: {
-        backgroundColor: colorLightGrey,
-      }
-    }
-   },
-});
+      },
+      headerTintColor: colorOrange,
+      headerTitleStyle: {
+        fontFamily: 'patrick-hand',
+        fontSize: 24,
+      },
+    },
+  },
+);
 
 export default TabNavigator(
   {
-    List: { screen: HomeStack },
-    Search: { screen: SearchStack },
-    Calculator: { screen: CalculatorScreen },
+    List: {
+      screen: HomeStack,
+      navigationOptions: {
+        tabBarLabel: 'List'
+      },
+    },
+    Search: {
+      screen: SearchStack,
+      navigationOptions: {
+        tabBarLabel: 'Search'
+      },
+    },
+    Calculator: {
+      screen: CalculatorScreen,
+    },
   },
   {
     navigationOptions: ({ navigation }) => ({

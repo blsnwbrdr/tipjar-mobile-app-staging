@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, FlatList, TouchableOpacity, View, Text } from 'react-native';
+import { SafeAreaView, StatusBar, ScrollView, FlatList, TouchableOpacity, View, Text } from 'react-native';
 import ListStyles from './../styles/ListStyles';
 
 // JSON DATA
@@ -23,30 +23,37 @@ export default class ListScreen extends Component {
     };
   }
 
+  static navigationOptions = {
+    title: 'Tip Jar',
+  };
+
   render() {
     return (
-      <ScrollView style={ListStyles.scrollContainer}>
-        <View style={ListStyles.headerContainer}>
-          <Text style={ListStyles.titleText}>TIP JAR</Text>
-          <Text style={ListStyles.subTitleText}>A globetrotting guide to gratuity</Text>
-        </View>
-        <FlatList style={ListStyles.listContainer}
-          data = {this.state.countryTipData}
-          keyExtractor = {(x, i) => i}
-          renderItem = { ({item}) =>
-            <View style={ListStyles.listButtonContainer}>
-              <TouchableOpacity onPress={ () => this.props.navigation.navigate('Info',item.country) }>
-                <View style={ListStyles.listButton}>
-                  <Text style={ListStyles.listButtonText}>{item.country}</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          }
-        />
-        <View>
-          <Text style={ListStyles.versionText}>v1.2.2</Text>
-        </View>
-      </ScrollView>
+      <SafeAreaView style={ListStyles.container}>
+        <StatusBar barStyle="dark-content" />
+        <ScrollView style={ListStyles.scrollContainer}>
+          <View style={ListStyles.headerContainer}>
+            <Text style={ListStyles.titleText}>TIP JAR</Text>
+            <Text style={ListStyles.subTitleText}>A globetrotting guide to gratuity</Text>
+          </View>
+          <FlatList style={ListStyles.listContainer}
+            data = {this.state.countryTipData}
+            keyExtractor = {(x, i) => i}
+            renderItem = { ({item}) =>
+              <View style={ListStyles.listButtonContainer}>
+                <TouchableOpacity onPress={ () => this.props.navigation.navigate('Info',item.country) }>
+                  <View style={ListStyles.listButton}>
+                    <Text style={ListStyles.listButtonText}>{item.country}</Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+            }
+          />
+          <View>
+            <Text style={ListStyles.versionText}>v1.2.2</Text>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }

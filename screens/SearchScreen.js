@@ -13,6 +13,10 @@ export default class Search extends Component {
     };
   }
 
+  static navigationOptions = {
+    title: 'Search',
+  };
+
   searchText(text) {
     const pattern = new RegExp(text,'gi');
     let userMatches = [];

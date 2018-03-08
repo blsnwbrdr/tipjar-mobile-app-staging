@@ -2,6 +2,10 @@ import { StyleSheet } from 'react-native';
 import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
 
 const ListStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colorLightGrey,
+  },
   scrollContainer: {
     flex: 1,
     backgroundColor: 'white',

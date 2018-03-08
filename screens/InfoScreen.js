@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AsyncStorage, ScrollView, View, Text } from 'react-native';
+import { AsyncStorage, SafeAreaView, StatusBar, ScrollView, View, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 import InfoStyles from './../styles/InfoStyles';
@@ -16,6 +16,14 @@ export default class InfoScreen extends React.Component {
       currencyData: []
     }
   }
+
+  static navigationOptions = ({ navigation }) => {
+    const { params } = navigation.state;
+    const country = params;
+      return {
+        title: country,
+      }
+  };
 
   componentDidMount = async () => {
     let response = await AsyncStorage.getItem('currency-data');
@@ -50,39 +58,41 @@ export default class InfoScreen extends React.Component {
   render() {
 
     return (
-      <ScrollView style={InfoStyles.scrollContainer}>
-        <View style={InfoStyles.countryContainer}>
-          <Text style={InfoStyles.countryHeader}>{this.state.countryTipData.country}</Text>
-          <Text style={InfoStyles.countryIcon}>
-            <FontAwesome name="cutlery" size={32} color="#494F56" />
-          </Text>
-          <Text style={InfoStyles.countryTitle}>Dining:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.dining}</Text>
-          <Text style={InfoStyles.countryIcon}>
-            <FontAwesome name="taxi" size={32} color="#494F56" />
-          </Text>
-          <Text style={InfoStyles.countryTitle}>Transportation:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.transportation}</Text>
-          <Text style={InfoStyles.countryIcon}>
-            <FontAwesome name="building" size={32} color="#494F56" />
-          </Text>
-          <Text style={InfoStyles.countryTitle}>Accomodation:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.accommodation}</Text>
-          <Text style={InfoStyles.countryIcon}>
-            <FontAwesome name="money" size={32} color="#494F56" />
-          </Text>
-          <Text style={InfoStyles.countryTitle}>Currency*:</Text>
-          <Text style={InfoStyles.countryText}>1 USD = {this.state.countryCurrencyData} {this.state.countryTipData.currency}</Text>
-          <Text style={InfoStyles.countryIcon}>
-            <FontAwesome name="language" size={32} color="#494F56" />
-          </Text>
-          <Text style={InfoStyles.countryTitle}>Thank you:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.thankyou}</Text>
-          <Text style={InfoStyles.countryTitle}>Goodbye:</Text>
-          <Text style={InfoStyles.countryText}>{this.state.countryTipData.goodbye}</Text>
-          <Text style={InfoStyles.disclaimerText}>*Currency data is not live. Exchange rates are updated daily.</Text>
-        </View>
-      </ScrollView>
+      <SafeAreaView style={InfoStyles.container}>
+        <StatusBar barStyle="dark-content" />
+        <ScrollView style={InfoStyles.scrollContainer}>
+          <View style={InfoStyles.countryContainer}>
+            <Text style={InfoStyles.countryIcon}>
+              <FontAwesome name="cutlery" size={32} color="#494F56" />
+            </Text>
+            <Text style={InfoStyles.countryTitle}>Dining:</Text>
+            <Text style={InfoStyles.countryText}>{this.state.countryTipData.dining}</Text>
+            <Text style={InfoStyles.countryIcon}>
+              <FontAwesome name="taxi" size={32} color="#494F56" />
+            </Text>
+            <Text style={InfoStyles.countryTitle}>Transportation:</Text>
+            <Text style={InfoStyles.countryText}>{this.state.countryTipData.transportation}</Text>
+            <Text style={InfoStyles.countryIcon}>
+              <FontAwesome name="building" size={32} color="#494F56" />
+            </Text>
+            <Text style={InfoStyles.countryTitle}>Accomodation:</Text>
+            <Text style={InfoStyles.countryText}>{this.state.countryTipData.accommodation}</Text>
+            <Text style={InfoStyles.countryIcon}>
+              <FontAwesome name="money" size={32} color="#494F56" />
+            </Text>
+            <Text style={InfoStyles.countryTitle}>Currency*:</Text>
+            <Text style={InfoStyles.countryText}>1 USD = {this.state.countryCurrencyData} {this.state.countryTipData.currency}</Text>
+            <Text style={InfoStyles.countryIcon}>
+              <FontAwesome name="language" size={32} color="#494F56" />
+            </Text>
+            <Text style={InfoStyles.countryTitle}>Thank you:</Text>
+            <Text style={InfoStyles.countryText}>{this.state.countryTipData.thankyou}</Text>
+            <Text style={InfoStyles.countryTitle}>Goodbye:</Text>
+            <Text style={InfoStyles.countryText}>{this.state.countryTipData.goodbye}</Text>
+            <Text style={InfoStyles.disclaimerText}>*Currency data is not live. Exchange rates are updated daily.</Text>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }

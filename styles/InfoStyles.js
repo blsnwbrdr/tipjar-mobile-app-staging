@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
 
 const InfoStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   scrollContainer: {
     flex: 1,
     backgroundColor: 'white',
