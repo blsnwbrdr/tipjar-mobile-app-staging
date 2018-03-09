@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { SafeAreaView, StatusBar, ScrollView, FlatList, TouchableOpacity, View, Text } from 'react-native';
+
+// STYLES
 import ListStyles from './../styles/ListStyles';
 
 // JSON DATA
@@ -23,11 +25,13 @@ export default class ListScreen extends Component {
     };
   }
 
-  static navigationOptions = {
-    title: 'List',
-  };
+  // HEADER TITLE
+  // static navigationOptions = {
+  //   title: 'List',
+  // };
 
   render() {
+
     return (
       <SafeAreaView style={ListStyles.container}>
         <StatusBar barStyle="dark-content" />

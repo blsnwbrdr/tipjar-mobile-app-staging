@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AsyncStorage, SafeAreaView, StatusBar, ScrollView, View, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
+// STYLES
 import InfoStyles from './../styles/InfoStyles';
 
 // JSON DATA
@@ -17,6 +18,7 @@ export default class InfoScreen extends React.Component {
     }
   }
 
+  // HEADER TITLE
   static navigationOptions = ({ navigation }) => {
     const { params } = navigation.state;
     const country = params;
@@ -25,16 +27,15 @@ export default class InfoScreen extends React.Component {
       }
   };
 
+  // GET COUNTRY TIP AND CURRENCY DATA
   componentDidMount = async () => {
     let response = await AsyncStorage.getItem('currency-data');
     response = JSON.parse(response);
     if (response === null) {
-      // console.log('load archive data');
       this.setState({
         currencyData: currencyDataArchive,
       })
     } else {
-      // console.log('load saved data');
       this.setState({
         currencyData: response,
       })

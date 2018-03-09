@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+
+// STYLES
 import SearchStyles from './../styles/SearchStyles';
 
 export default class CloseKeyboard extends Component {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { NetInfo, AsyncStorage, View, Text } from 'react-native';
+import { NetInfo, AsyncStorage } from 'react-native';
 import { AppLoading, Font } from 'expo';
-import MainNavigation from './MainNavigation';
-// import Styles from './styles/Styles';
+import MainNavigation from './navigation/MainNavigation';
 
 export default class App extends Component {
   state = {
@@ -40,9 +39,9 @@ export default class App extends Component {
       if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
         return (
           <AppLoading
-            startAsync={this._loadResourcesAsync}
-            onError={this._handleLoadingError}
-            onFinish={this._handleFinishLoading}
+            startAsync={this.loadResourcesAsync}
+            onError={this.handleLoadingError}
+            onFinish={this.handleFinishLoading}
           />
         );
       } else {
@@ -51,7 +50,7 @@ export default class App extends Component {
     }
 
   // ASYNC LOAD FONTS
-  _loadResourcesAsync = async () => {
+  loadResourcesAsync = async () => {
     return Promise.all([
       Font.loadAsync({
         'patrick-hand': require('./assets/fonts/PatrickHand-Regular.ttf'),
@@ -60,10 +59,10 @@ export default class App extends Component {
       }),
     ]);
   };
-  _handleLoadingError = error => {
+  handleLoadingError = (error) => {
     console.warn(error);
   };
-  _handleFinishLoading = () => {
+  handleFinishLoading = () => {
     this.setState({
       isLoadingComplete: true
     });

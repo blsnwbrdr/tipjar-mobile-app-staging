@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { SafeAreaView, StatusBar, Keyboard, TextInput, ScrollView, FlatList, TouchableWithoutFeedback, TouchableOpacity, View, Text } from 'react-native';
+
+// COMPONENTS
 import CloseKeyboard  from './../components/CloseKeyboard';
+
+// STYLES
 import SearchStyles from './../styles/SearchStyles';
 
 // JSON DATA
@@ -15,32 +19,32 @@ export default class Search extends Component {
     };
   }
 
-  static navigationOptions = {
-    title: 'Search',
-  };
+  // HEADER TITLE
+  // static navigationOptions = {
+  //   title: 'Search',
+  // };
 
+  // KEYBOARD LISTENERS AND FUNCTIONS
   componentWillMount() {
-    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
-    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide);
   }
-
   componentWillUnmount() {
     this.keyboardDidShowListener.remove();
     this.keyboardDidHideListener.remove();
   }
-
-  _keyboardDidShow = () => {
+  keyboardDidShow = () => {
     this.setState({
       keyboard: 'on',
     })
   }
-
-  _keyboardDidHide = () => {
+  keyboardDidHide = () => {
     this.setState({
       keyboard: 'off',
     })
   }
 
+  // SEARCH FUNCTION
   searchText(text) {
     const pattern = new RegExp(text,'gi');
     let userMatches = [];
@@ -58,12 +62,13 @@ export default class Search extends Component {
     }
   }
 
+  // CLOSE KEYBOARD
   closeKeyboard() {
-    console.log('close keyboard');
     Keyboard.dismiss();
   }
 
   render() {
+
     return (
       <SafeAreaView style={SearchStyles.container}>
         <StatusBar barStyle="dark-content" />

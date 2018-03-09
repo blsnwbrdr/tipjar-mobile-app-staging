@@ -3,13 +3,15 @@ import { StatusBar, Text, View, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 
-import ListScreen from './screens/ListScreen';
-import InfoScreen from './screens/InfoScreen';
-import SearchScreen from './screens/SearchScreen';
-import SearchInfoScreen from './screens/SearchInfoScreen';
-import CalculatorScreen from './screens/CalculatorScreen';
+// SCREENS
+import ListScreen from './../screens/ListScreen';
+import InfoScreen from './../screens/InfoScreen';
+import SearchScreen from './../screens/SearchScreen';
+import SearchInfoScreen from './../screens/SearchInfoScreen';
+import CalculatorScreen from './../screens/CalculatorScreen';
 
-import { colorOrange, colorDarkGrey, colorLightGrey } from './styles/Constants';
+// STYLE CONSTANTS
+import { colorOrange, colorDarkGrey, colorLightGrey } from './../styles/Constants';
 
 const HomeStack = StackNavigator(
   {
