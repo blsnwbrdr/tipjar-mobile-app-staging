@@ -2,6 +2,10 @@ import { StyleSheet } from 'react-native';
 import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
 
 const SearchInfoStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   scrollContainer: {
     flex: 1,
     backgroundColor: 'white',

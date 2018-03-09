@@ -24,7 +24,7 @@ export default class ListScreen extends Component {
   }
 
   static navigationOptions = {
-    title: 'Tip Jar',
+    title: 'List',
   };
 
   render() {

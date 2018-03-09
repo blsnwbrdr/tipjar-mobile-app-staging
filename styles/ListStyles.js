@@ -4,7 +4,7 @@ import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
 const ListStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colorLightGrey,
+    backgroundColor: 'white',
   },
   scrollContainer: {
     flex: 1,

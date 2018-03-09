@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AsyncStorage, ScrollView, View, Text } from 'react-native';
+import { AsyncStorage, SafeAreaView, StatusBar, ScrollView, View, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 import SearchInfoStyles from './../styles/SearchInfoStyles';
@@ -58,38 +58,41 @@ export default class InfoScreen extends React.Component {
   render() {
 
     return (
-      <ScrollView style={SearchInfoStyles.scrollContainer}>
-        <View style={SearchInfoStyles.countryContainer}>
-          <Text style={SearchInfoStyles.countryIcon}>
-            <FontAwesome name="cutlery" size={32} color="#494F56" />
-          </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Dining:</Text>
-          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.dining}</Text>
-          <Text style={SearchInfoStyles.countryIcon}>
-            <FontAwesome name="taxi" size={32} color="#494F56" />
-          </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Transportation:</Text>
-          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.transportation}</Text>
-          <Text style={SearchInfoStyles.countryIcon}>
-            <FontAwesome name="building" size={32} color="#494F56" />
-          </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Accomodation:</Text>
-          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.accommodation}</Text>
-          <Text style={SearchInfoStyles.countryIcon}>
-            <FontAwesome name="money" size={32} color="#494F56" />
-          </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Currency*:</Text>
-          <Text style={SearchInfoStyles.countryText}>1 USD = {this.state.countryCurrencyData} {this.state.countryTipData.currency}</Text>
-          <Text style={SearchInfoStyles.countryIcon}>
-            <FontAwesome name="language" size={32} color="#494F56" />
-          </Text>
-          <Text style={SearchInfoStyles.countryTitle}>Thank you:</Text>
-          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.thankyou}</Text>
-          <Text style={SearchInfoStyles.countryTitle}>Goodbye:</Text>
-          <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.goodbye}</Text>
-          <Text style={SearchInfoStyles.disclaimerText}>*Currency data is not live. Exchange rates are updated daily.</Text>
-        </View>
-      </ScrollView>
+      <SafeAreaView style={SearchInfoStyles.container}>
+        <StatusBar barStyle="dark-content" />
+        <ScrollView style={SearchInfoStyles.scrollContainer}>
+          <View style={SearchInfoStyles.countryContainer}>
+            <Text style={SearchInfoStyles.countryIcon}>
+              <FontAwesome name="cutlery" size={32} color="#494F56" />
+            </Text>
+            <Text style={SearchInfoStyles.countryTitle}>Dining:</Text>
+            <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.dining}</Text>
+            <Text style={SearchInfoStyles.countryIcon}>
+              <FontAwesome name="taxi" size={32} color="#494F56" />
+            </Text>
+            <Text style={SearchInfoStyles.countryTitle}>Transportation:</Text>
+            <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.transportation}</Text>
+            <Text style={SearchInfoStyles.countryIcon}>
+              <FontAwesome name="building" size={32} color="#494F56" />
+            </Text>
+            <Text style={SearchInfoStyles.countryTitle}>Accomodation:</Text>
+            <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.accommodation}</Text>
+            <Text style={SearchInfoStyles.countryIcon}>
+              <FontAwesome name="money" size={32} color="#494F56" />
+            </Text>
+            <Text style={SearchInfoStyles.countryTitle}>Currency*:</Text>
+            <Text style={SearchInfoStyles.countryText}>1 USD = {this.state.countryCurrencyData} {this.state.countryTipData.currency}</Text>
+            <Text style={SearchInfoStyles.countryIcon}>
+              <FontAwesome name="language" size={32} color="#494F56" />
+            </Text>
+            <Text style={SearchInfoStyles.countryTitle}>Thank you:</Text>
+            <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.thankyou}</Text>
+            <Text style={SearchInfoStyles.countryTitle}>Goodbye:</Text>
+            <Text style={SearchInfoStyles.countryText}>{this.state.countryTipData.goodbye}</Text>
+            <Text style={SearchInfoStyles.disclaimerText}>*Currency data is not live. Exchange rates are updated daily.</Text>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }

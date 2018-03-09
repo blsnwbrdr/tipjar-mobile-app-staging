@@ -15,6 +15,13 @@ const HomeStack = StackNavigator(
   {
     List: {
       screen: ListScreen,
+      navigationOptions: {
+        headerStyle: {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+        },
+      },
     },
     Info: {
       screen: InfoScreen,
@@ -23,9 +30,9 @@ const HomeStack = StackNavigator(
   {
     navigationOptions: {
       headerStyle: {
-        backgroundColor: colorLightGrey,
+        backgroundColor: colorOrange,
       },
-      headerTintColor: colorOrange,
+      headerTintColor: 'white',
       headerTitleStyle: {
         fontFamily: 'patrick-hand',
         fontSize: 24,
@@ -38,6 +45,13 @@ const SearchStack = StackNavigator(
   {
     Search: {
       screen: SearchScreen,
+      navigationOptions: {
+        headerStyle: {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+        },
+      },
     },
     SearchInfo: {
       screen: SearchInfoScreen,
@@ -46,9 +60,9 @@ const SearchStack = StackNavigator(
   {
     navigationOptions: {
       headerStyle: {
-        backgroundColor: colorLightGrey,
+        backgroundColor: colorOrange,
       },
-      headerTintColor: colorOrange,
+      headerTintColor: 'white',
       headerTitleStyle: {
         fontFamily: 'patrick-hand',
         fontSize: 24,

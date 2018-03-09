@@ -4,18 +4,33 @@ import { colorOrange, colorLightGrey, colorDarkGrey } from './Constants';
 const SearchStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colorLightGrey,
+    backgroundColor: 'white',
   },
   bodyContainer: {
     flex: 9,
     backgroundColor: 'white',
   },
+  closeButton: {
+    width: 40,
+    height: 40,
+    position: 'absolute',
+    right: 40,
+  },
+  closeButtonView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   input: {
     borderColor: colorDarkGrey,
-    borderWidth: 1,
-    borderRadius: 3,
+    borderBottomWidth: 1,
+    borderRightWidth: 0,
+    borderLeftWidth: 0,
+    borderTopWidth: 0,
     padding: 10,
-    margin: 20,
+    marginTop: 40,
+    marginRight: 50,
+    marginLeft: 50,
+    marginBottom: 25,
   },
   scrollContainer: {
     flex: 1,
