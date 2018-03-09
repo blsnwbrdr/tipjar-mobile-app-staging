@@ -30,6 +30,7 @@ const HomeStack = StackNavigator(
     },
   },
   {
+    headerMode: 'screen',
     navigationOptions: {
       headerStyle: {
         backgroundColor: colorOrange,
@@ -60,6 +61,7 @@ const SearchStack = StackNavigator(
     },
   },
   {
+    headerMode: 'screen',
     navigationOptions: {
       headerStyle: {
         backgroundColor: colorOrange,
