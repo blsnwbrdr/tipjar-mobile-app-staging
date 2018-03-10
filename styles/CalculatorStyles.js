@@ -19,7 +19,7 @@ const CalculatorStyles = StyleSheet.create({
     padding: 10,
   },
   calcPad: {
-    flex: 9,
+    flex: 8,
     backgroundColor: colorLightGrey,
   },
   calcRow: {
