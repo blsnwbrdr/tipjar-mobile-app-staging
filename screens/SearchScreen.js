@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { SafeAreaView, StatusBar, Keyboard, TextInput, ScrollView, FlatList, TouchableWithoutFeedback, TouchableOpacity, View, Text } from 'react-native';
 
 // COMPONENTS
+import ClearSearch from './../components/ClearSearch';
 import CloseKeyboard  from './../components/CloseKeyboard';
 
 // STYLES
@@ -48,6 +49,9 @@ export default class Search extends Component {
   searchText(text) {
     const pattern = new RegExp(text,'gi');
     let userMatches = [];
+    this.setState({
+      text: text,
+    })
     for (let x = 0; x < countryTipData.length; x++) {
       if (text === '' ) {
         this.setState({
@@ -81,6 +85,7 @@ export default class Search extends Component {
             style={SearchStyles.input}
             autoCorrect={false}
             placeholder='Search'
+            clearButtonMode='always'
             onChangeText={(text) => this.searchText(text)}
           />
           <TouchableWithoutFeedback onPress={ () => this.closeKeyboard() }>
