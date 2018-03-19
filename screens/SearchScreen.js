@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { SafeAreaView, StatusBar, Keyboard, TextInput, ScrollView, FlatList, TouchableWithoutFeedback, TouchableOpacity, View, Text } from 'react-native';
 
 // COMPONENTS
-import ClearSearch from './../components/ClearSearch';
 import CloseKeyboard  from './../components/CloseKeyboard';
 
 // STYLES

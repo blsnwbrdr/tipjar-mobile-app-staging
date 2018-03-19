@@ -10,16 +10,6 @@ const SearchStyles = StyleSheet.create({
     flex: 9,
     backgroundColor: 'white',
   },
-  clearSearchButton: {
-    height: 40,
-    position: 'absolute',
-    left: 40,
-  },
-  clearSearchButtonView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   closeButton: {
     width: 40,
     height: 40,
