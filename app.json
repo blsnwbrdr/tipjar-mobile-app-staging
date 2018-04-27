@@ -14,13 +14,16 @@
       "backgroundColor": "#3E2916"
     },
     "ios": {
-      "bundleIdentifier": "com.brandonscode.tipjar-stagin",
+      "bundleIdentifier": "com.brandonscode.tipjar-staging",
       "buildNumber": "1.2.0",
       "splash": {
         "image": "./assets/tipjar-splash.png",
         "resizeMode": "cover",
         "backgroundColor": "#3E2916"
-      }
-    }
+      },
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 5000,
+    },
   }
 }

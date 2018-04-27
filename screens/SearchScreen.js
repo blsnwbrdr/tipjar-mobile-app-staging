@@ -19,11 +19,6 @@ export default class Search extends Component {
     };
   }
 
-  // HEADER TITLE
-  // static navigationOptions = {
-  //   title: 'Search',
-  // };
-
   // KEYBOARD LISTENERS AND FUNCTIONS
   componentWillMount() {
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
@@ -48,9 +43,6 @@ export default class Search extends Component {
   searchText(text) {
     const pattern = new RegExp(text,'gi');
     let userMatches = [];
-    this.setState({
-      text: text,
-    })
     for (let x = 0; x < countryTipData.length; x++) {
       if (text === '' ) {
         this.setState({

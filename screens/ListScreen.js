@@ -25,11 +25,6 @@ export default class ListScreen extends Component {
     };
   }
 
-  // HEADER TITLE
-  // static navigationOptions = {
-  //   title: 'List',
-  // };
-
   render() {
 
     return (
@@ -54,7 +49,7 @@ export default class ListScreen extends Component {
             }
           />
           <View>
-            <Text style={ListStyles.versionText}>v1.2.2</Text>
+            <Text style={ListStyles.versionText}>v1.4.1</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
