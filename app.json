@@ -22,8 +22,5 @@
         "backgroundColor": "#3E2916"
       },
     },
-    "updates": {
-      "fallbackToCacheTimeout": 5000,
-    },
   }
 }
