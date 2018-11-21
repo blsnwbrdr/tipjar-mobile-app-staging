@@ -42,7 +42,7 @@ export default class ListScreen extends Component {
     connectivityChange = (isConnected) => {
       console.log('Now ' + (isConnected ? 'online' : 'offline'));
       if (isConnected) {
-        fetch('https://brandonscode.herokuapp.com/tipjar/all')
+        fetch('https://brandonscode.herokuapp.com/tipjar/tip-data')
           .then(res => res.json())
           .then(
             (result) => {
@@ -121,7 +121,7 @@ export default class ListScreen extends Component {
               </View>
           }
           <View>
-            <Text style={ListStyles.versionText}>v1.5.1</Text>
+            <Text style={ListStyles.versionText}>v1.5.2</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
