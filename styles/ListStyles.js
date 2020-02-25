@@ -2,11 +2,11 @@ import { StyleSheet } from 'react-native';
 import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
 
 const ListStyles = StyleSheet.create({
-  container: {
+  safeViewContainer: {
     flex: 1,
     backgroundColor: 'white',
   },
-  scrollContainer: {
+  container: {
     flex: 1,
     backgroundColor: 'white',
   },
@@ -31,7 +31,6 @@ const ListStyles = StyleSheet.create({
   },
   listContainer: {
     marginTop: 10,
-    marginBottom: 40,
   },
   listButtonContainer: {
     alignItems: 'center',

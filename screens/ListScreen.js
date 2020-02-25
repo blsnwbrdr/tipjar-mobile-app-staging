@@ -85,9 +85,9 @@ export default class ListScreen extends Component {
     const displayError = this.state.displayError;
 
     return (
-      <SafeAreaView style={ListStyles.container}>
+      <SafeAreaView style={ListStyles.safeViewContainer}>
         <StatusBar barStyle="dark-content" />
-        <ScrollView style={ListStyles.scrollContainer}>
+        <View style={ListStyles.container}>
           <View style={ListStyles.headerContainer}>
             <Text style={ListStyles.titleText}>TIP JAR</Text>
             <Text style={ListStyles.subTitleText}>A globetrotting guide to gratuity</Text>
@@ -106,6 +106,11 @@ export default class ListScreen extends Component {
                     </TouchableOpacity>
                   </View>
                 }
+                ListFooterComponent = {
+                  <View>
+                    <Text style={ListStyles.versionText}>v1.5.4</Text>
+                  </View>
+                }
               />
           }
           {
@@ -121,10 +126,7 @@ export default class ListScreen extends Component {
                 <Text style={ListStyles.otherTextSmall}>For your first use, an internet connection is needed to download our tip data. Once downloaded, the app can be used offline.</Text>
               </View>
           }
-          <View>
-            <Text style={ListStyles.versionText}>v1.5.4</Text>
-          </View>
-        </ScrollView>
+        </View>
       </SafeAreaView>
     );
   }

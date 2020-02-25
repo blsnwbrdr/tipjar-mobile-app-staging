@@ -71,7 +71,7 @@ export default class Search extends Component {
   render() {
 
     return (
-      <SafeAreaView style={SearchStyles.container}>
+      <SafeAreaView style={SearchStyles.safeViewContainer}>
         <StatusBar barStyle="dark-content" />
         <View style={SearchStyles.bodyContainer}>
           <CloseKeyboard
@@ -86,7 +86,7 @@ export default class Search extends Component {
             onChangeText={(text) => this.searchText(text)}
           />
           <TouchableWithoutFeedback onPress={ () => this.closeKeyboard() }>
-            <ScrollView style={SearchStyles.scrollContainer} keyboardShouldPersistTaps='always'>
+            <View style={SearchStyles.container} keyboardShouldPersistTaps='always'>
               <FlatList style={SearchStyles.listContainer}
                 keyboardShouldPersistTaps='always'
                 data = {this.state.countryTipDataMatch}
@@ -101,7 +101,7 @@ export default class Search extends Component {
                   </View>
                 }
               />
-            </ScrollView>
+            </View>
           </TouchableWithoutFeedback>
         </View>
       </SafeAreaView>
