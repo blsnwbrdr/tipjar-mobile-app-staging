@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AsyncStorage, SafeAreaView, StatusBar, ScrollView, FlatList, TouchableOpacity, View, Text } from 'react-native';
+import { AsyncStorage, SafeAreaView, StatusBar, FlatList, TouchableOpacity, View, Text } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 
 // STYLES

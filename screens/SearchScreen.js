@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AsyncStorage, SafeAreaView, StatusBar, Keyboard, TextInput, ScrollView, FlatList, TouchableWithoutFeedback, TouchableOpacity, View, Text } from 'react-native';
+import { AsyncStorage, SafeAreaView, StatusBar, Keyboard, TextInput, FlatList, TouchableWithoutFeedback, TouchableOpacity, View, Text } from 'react-native';
 
 // COMPONENTS
 import CloseKeyboard  from './../components/CloseKeyboard';
