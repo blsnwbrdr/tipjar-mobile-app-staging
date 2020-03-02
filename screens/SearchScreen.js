@@ -26,7 +26,7 @@ export default class Search extends Component {
   }
 
   // KEYBOARD LISTENERS AND FUNCTIONS
-  componentWillMount() {
+  componentDidMount() {
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
     this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide);
   }
