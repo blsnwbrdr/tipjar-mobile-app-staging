@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { AsyncStorage, SafeAreaView, StatusBar, FlatList, TouchableOpacity, View, Text } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 
+// COMPONENTS
+import Header from './../components/Header';
+import Footer from './../components/Footer';
+
 // STYLES
 import ListStyles from './../styles/ListStyles';
 
@@ -88,10 +92,7 @@ export default class ListScreen extends Component {
       <SafeAreaView style={ListStyles.safeViewContainer}>
         <StatusBar barStyle="dark-content" />
         <View style={ListStyles.container}>
-          <View style={ListStyles.headerContainer}>
-            <Text style={ListStyles.titleText}>TIP JAR</Text>
-            <Text style={ListStyles.subTitleText}>A globetrotting guide to gratuity</Text>
-          </View>
+          <Header />
           {
             displayList &&
               <FlatList style={ListStyles.listContainer}
@@ -107,9 +108,7 @@ export default class ListScreen extends Component {
                   </View>
                 }
                 ListFooterComponent = {
-                  <View>
-                    <Text style={ListStyles.versionText}>v1.5.4</Text>
-                  </View>
+                  <Footer />
                 }
               />
           }

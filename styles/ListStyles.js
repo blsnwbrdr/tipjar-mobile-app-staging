@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colorDarkGrey, colorOrange, colorLightGrey } from './Constants';
+import { colorDarkGrey } from './Constants';
 
 const ListStyles = StyleSheet.create({
   safeViewContainer: {
@@ -9,21 +9,6 @@ const ListStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-  },
-  headerContainer: {
-    alignItems: 'center',
-    paddingBottom: 20,
-  },
-  titleText: {
-    fontFamily: 'patrick-hand',
-    fontSize: 60,
-    color: colorOrange,
-    marginBottom: 0,
-  },
-  subTitleText: {
-    fontFamily: 'nothing-you-could-do',
-    fontSize: 16,
-    color: colorDarkGrey,
   },
   countryListingContainer: {
     flex: 1,
@@ -63,13 +48,6 @@ const ListStyles = StyleSheet.create({
     textAlign: 'center',
     paddingLeft: 50,
     paddingRight: 50,
-  },
-  versionText: {
-    fontFamily: 'hind',
-    fontSize: 12,
-    color: colorDarkGrey,
-    textAlign: 'center',
-    paddingBottom: 30,
   }
 });
 
