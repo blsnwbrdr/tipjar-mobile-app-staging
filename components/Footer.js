@@ -9,7 +9,7 @@ export default class Footer extends Component {
   render() {
     return (
       <View style={FooterStyles.container}>
-        <Text style={FooterStyles.text}>v1.5.5</Text>
+        <Text style={FooterStyles.text}>v1.5.4</Text>
       </View>
     )
   }
